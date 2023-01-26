@@ -1,7 +1,7 @@
 
 ### Create S3 bucket and DynamoDB table
 - those will be used for remote state and for state locking (so that multiple developers can press `terraform apply` at the same time)
-- uncomment code in [infra/deployments/prod/state.tf](infra/deployments/prod/state.tf)
+- uncomment code in [infra/deployments/prod/state.tf](https://github.com/kmotrebski/warsztaty-iac-tmp/blob/master/infra/deployments/prod/state.tf)
 - change S3 bucket name to your unique name because it must be unique globally
 - `terraform apply` changes
 
@@ -13,7 +13,7 @@
 ```
 
 ### Create EC2 instance
-- uncomment code in [`infra/deployments/prod/instances.tf` file](infra/deployments/prod/instances.tf)
+- uncomment code in [`infra/deployments/prod/instances.tf` file](https://github.com/kmotrebski/warsztaty-iac-tmp/blob/master/infra/deployments/prod/instances.tf)
 - apply changes
 ### Run tests from main directory
 ```
