@@ -43,31 +43,6 @@ function install_terraform_on_linux_for_prod_deployment() {
 
 install_terraform_on_linux_for_prod_deployment
 
-function install_terraform_on_linux_for_global_deployment() {
-
-    INSTALLED_PROD_FILE=infra/deployments/prod/terraform
-    INSTALLED_FILE=infra/deployments/global/terraform
-    INSTALLED_DIR=infra/deployments/global
-    mkdir -p ${INSTALLED_DIR}
-
-    if [ -f "$INSTALLED_FILE" ]; then
-      printf "${GREEN}Terraform in global deployment directory is already installed.${NC}\n"
-      return;
-    fi
-
-    printf "${YELLOW}Terraform does not exist at ${INSTALLED_FILE}. Going to install it.${NC}\n"
-
-    #download zipped archive
-    cp ${INSTALLED_PROD_FILE} ${INSTALLED_FILE}
-
-    #apply execution permission
-    chmod +x ${INSTALLED_FILE}
-
-    printf "${GREEN}Terraform installed successfully.${NC}\n"
-}
-
-install_terraform_on_linux_for_global_deployment
-
 ./infra/deployments/prod/terraform -chdir=infra/deployments/prod/ init
 printf "${YELLOW}Asserting AWS credentials are set up...${NC}\n"
 ./infra/deployments/prod/terraform -chdir=infra/deployments/prod/ plan
