@@ -1,19 +1,19 @@
 
 ### Create S3 bucket and DynamoDB table
 - those will be used for remote state and for state locking (so that multiple developers can press `terraform apply` at the same time)
-- uncomment `state.tf` (see [commit here](https://github.com/kmotrebski/warsztaty-iac/commit/18c0771e189f35eadecd6b8ac1b9d3d339b1baff))
+- uncomment code in [infra/deployments/prod/state.tf](infra/deployments/prod/state.tf)
 - change S3 bucket name to your unique name because it must be unique globally
 - `terraform apply` changes
 
 ### Switch from local to remote state
-- comment local state configuration and uncomment remote S3 state [as in this commit](https://github.com/kmotrebski/warsztaty-iac/commit/5fc0f537e1eebda23c7c24285b993d506638d945)
+- comment [local state configuration](https://github.com/kmotrebski/warsztaty-iac-tmp/blob/f803930a29f945897eacb1d3f3500d03be64db6c/infra/deployments/prod/meta.tf#L10-L11) and uncomment [remote S3 state](https://github.com/kmotrebski/warsztaty-iac-tmp/blob/f803930a29f945897eacb1d3f3500d03be64db6c/infra/deployments/prod/meta.tf#L2-L8)
 - `terraform init` with state migration option
 ```
 ./terraform init -migrate-state
 ```
 
 ### Create EC2 instance
-- uncomment code in `instances.tf` file as in [this commit](https://github.com/kmotrebski/warsztaty-iac/commit/69b3bdafd7eb302b61382c7536495792c2564017)
+- uncomment code in [`infra/deployments/prod/instances.tf` file](infra/deployments/prod/instances.tf)
 - apply changes
 ### Run tests from main directory
 ```
