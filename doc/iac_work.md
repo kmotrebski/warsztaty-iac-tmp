@@ -2,7 +2,7 @@
 ### Create S3 bucket and DynamoDB table
 - those will be used for remote state and for state locking (so that multiple developers can press `terraform apply` at the same time)
 - uncomment code in [infra/deployments/prod/state.tf](https://github.com/kmotrebski/warsztaty-iac-tmp/blob/master/infra/deployments/prod/state.tf)
-- change S3 bucket name to your unique name because it must be unique globally
+- change S3 bucket name to your unique name because it must be unique globally (I am assuming somebody will go through this tutorial but maybe I am idealistic)
 - `terraform apply` changes
 
 ### Switch from local to remote state
@@ -13,8 +13,9 @@
 ```
 
 ### Create EC2 instance
+- copy&paste your public ssh key to `infra/ssh_keys/your_key.ssh` file
 - uncomment code in [`infra/deployments/prod/instances.tf` file](https://github.com/kmotrebski/warsztaty-iac-tmp/blob/master/infra/deployments/prod/instances.tf)
-- apply changes
+- run `terraform init` and them `... apply` changes (that is create module infrastructure). Wait few minutes till infrastructure gets created.
 ### Run tests from main directory
 ```
 ./terraform_apply_and_tests.sh
