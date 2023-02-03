@@ -47,6 +47,8 @@ Goal: see this kind of error when trying `terraform apply` by two different deve
 ╵
 ```
 
-- set up project on 2x separate laptops (or different directories should work too)
+- set up project on 2x separate laptops (simple: or in different directory)
+- introduce some change to infrastructure, e.g. change `instance_name`
+- commit this change to git and make sure it is present in both projects. We need to motivate terraform to start introducing changes.
 - execute `terraform apply` (you don't need to type `yes`, make terraform wait for your yes)
 - try to execute `terraform apply` on different laptop
