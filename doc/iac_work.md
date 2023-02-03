@@ -13,7 +13,7 @@
 ```
 
 ### Create EC2 instance
-- copy&paste your public ssh key to `infra/ssh_keys/your_key.ssh` file
+- copy&paste your public ssh key to `infra/ssh_keys/your_key.pub` file
 - uncomment code in [`infra/deployments/prod/instances.tf` file](https://github.com/kmotrebski/warsztaty-iac-tmp/blob/master/infra/deployments/prod/instances.tf)
 - run `terraform init` and them `... apply` changes (that is create module infrastructure). Wait few minutes till infrastructure gets created.
 ### Run tests from main directory
