@@ -70,6 +70,21 @@ aws_secret_access_key = your_secret_here
 
 ### Create ECR (Docker) registry and Docker image
 - using Terraform create ECR infrastructure in `ecr.tf` file
+- after creating the infrastructure Terraform should output `repository_url` which is your ECR URL
+- create `development.env` file in project's top directory:
+```
+nano development.env
+```
+- file template:
+```
+WARSZTATY_AWS_DIR=~/.aws
+WARSZTATY_REGION=eu-central-1
+
+WARSZTATY_ECR_URL=1234567890.dkr.ecr.eu-central-1.amazonaws.com
+WARSZTATY_IMAGE_DEV=1234567890.dkr.ecr.eu-central-1.amazonaws.com/php:dev
+WARSZTATY_IMAGE_PROD=1234567890.dkr.ecr.eu-central-1.amazonaws.com/php:prod
+```
+- don't forget to replace `1234567890` above with your AWS account ID (or entire URL if you decided to change `eu-central-1` region to different)
 - using `build_and_push_docker_images.sh` helper build Docker images and push `prod` one to ECR registry
 ```
 ./build_and_push_docker_images.sh
