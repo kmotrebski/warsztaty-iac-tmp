@@ -70,8 +70,7 @@ aws_secret_access_key = your_secret_here
 
 ### Create ECR (Docker) registry and Docker image
 - using Terraform create ECR infrastructure in `ecr.tf` file
-- after creating the infrastructure Terraform should output `repository_url` which is your ECR URL
-- see ECR URL displayed as Terraform output. You will need to fill in all variables in `development.env` described in next steps
+- after creating the infrastructure Terraform should output `repository_url` which is your ECR URL. You will need to fill in all variables in `development.env` described in next steps
 - create `development.env` file in project's top directory:
 ```
 nano development.env
