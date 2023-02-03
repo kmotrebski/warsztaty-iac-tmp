@@ -71,6 +71,7 @@ aws_secret_access_key = your_secret_here
 ### Create ECR (Docker) registry and Docker image
 - using Terraform create ECR infrastructure in `ecr.tf` file
 - after creating the infrastructure Terraform should output `repository_url` which is your ECR URL
+- see ECR URL displayed as Terraform output. You will need to fill in all variables in `development.env` described in next steps
 - create `development.env` file in project's top directory:
 ```
 nano development.env
@@ -89,7 +90,6 @@ WARSZTATY_IMAGE_PROD=1234567890.dkr.ecr.eu-central-1.amazonaws.com/php:prod
 ```
 ./build_and_push_docker_images.sh
 ```
-- see ECR URL displayed as Terraform output. Use it to fill in all data in `development.env` file in main directory
 - install Composer dependencies using Docker wrapper
 ```
 ./helpers/composer.sh install
