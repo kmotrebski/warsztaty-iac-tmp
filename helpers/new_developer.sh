@@ -13,4 +13,5 @@ source helpers/new_developer/docker.sh
 source helpers/new_developer/install_terraform.sh
 source helpers/new_developer/chrome.sh
 source helpers/new_developer/phpstorm.sh
+./helpers/composer.sh install
 printf "${GREEN}New developer finished!${NC}\n"
