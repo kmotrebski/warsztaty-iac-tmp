@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+mkdir -p infra/ssh_keys
+touch infra/ssh_keys/your_key.pub
+
 source helpers/basic.sh
 source helpers/new_developer/decisions.sh
 source helpers/new_developer/mouse_middle_button.sh
